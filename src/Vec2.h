@@ -30,7 +30,7 @@ public:
 	// returns angle in degrees
 	float angle() const;
 	
-	// calcutates the velocity vector
+	// calculates the velocity vector
 	// angle must be in degrees
 	static Vec2 velocity(float speed, float angle);
 };
