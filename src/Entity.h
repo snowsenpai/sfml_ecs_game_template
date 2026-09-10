@@ -9,13 +9,13 @@
 
 class EntityManager;
 
-typedef std::tuple <
+using ComponentTuple = std::tuple<
 	std::optional<CTransform>,
 	std::optional<CBoundingBox>,
 	std::optional<CBoundingCircle>,
 	std::optional<CShape>,
-	std::optional<CInput>>
-	ComponentTuple;
+	std::optional<CInput>
+>;
 
 class Entity
 {

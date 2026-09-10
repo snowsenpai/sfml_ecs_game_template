@@ -131,19 +131,27 @@ void Game::sCollision()
 	float playerRadius = m_player->getComponent<CShape>().value().circle.getRadius();
 	
 	auto& playerTransform = m_player->getComponent<CTransform>().value();
-
+	
+	// x axis
 	if (
 		// left
 		playerTransform.pos.x - playerRadius <= 0.0f ||
 		// right
-		playerTransform.pos.x + playerRadius >= static_cast<float>(windowSize.x) ||
+		playerTransform.pos.x + playerRadius >= static_cast<float>(windowSize.x)
+		)
+	{
+		playerTransform.pos.x = playerTransform.prevPos.x;
+	}
+
+	// y axis
+	if (
 		// bottom
 		playerTransform.pos.y + playerRadius >= static_cast<float>(windowSize.y) ||
 		// top
 		playerTransform.pos.y - playerRadius <= 0.0f
 		)
 	{
-		playerTransform.pos = playerTransform.prevPos;
+		playerTransform.pos.y = playerTransform.prevPos.y;
 	}
 }
 
