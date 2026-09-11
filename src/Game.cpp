@@ -5,8 +5,6 @@
 #include <SFML/Graphics.hpp>
 
 #include <memory>
-#include <random>
-#include <type_traits>
 
 void Game::run()
 {
