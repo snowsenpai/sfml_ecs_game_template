@@ -247,22 +247,3 @@ void Game::sPlayerInput()
 		}
 	}
 }
-
-template <typename T>
-T Game::rng(T min, T max)
-{
-	static_assert(std::is_arithmetic<T>::value, "function arguments must be an arithmetic type");
-
-	std::mt19937 gen(m_randomDevice());
-
-	if constexpr (std::is_integral<T>::value)
-	{
-		std::uniform_int_distribution<T> dist(min, max);
-		return dist(gen);
-	}
-	else if constexpr (std::is_floating_point<T>::value)
-	{
-		std::uniform_real_distribution<T> dist(min, max);
-		return dist(gen);
-	}
-}
