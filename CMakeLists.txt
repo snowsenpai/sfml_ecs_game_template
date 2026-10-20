@@ -16,6 +16,7 @@ FetchContent_MakeAvailable(SFML)
 
 add_executable(ecs_template
     src/main.cpp
+    src/MathUtils.h
     src/Vec2.h
     src/Vec2.cpp
     src/Components.h

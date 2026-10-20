@@ -1,13 +1,13 @@
 #pragma once
 
-#include "EntityManager.h"
 #include "Entity.h"
+#include "EntityManager.h"
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 #include <memory>
-#include <type_traits>
 #include <random>
+#include <type_traits>
 
 class Game
 {
